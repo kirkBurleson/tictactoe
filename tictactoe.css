@@ -1,0 +1,38 @@
+
+html {
+	background-color: rgba(23, 189, 200, 1);
+	}
+
+body {
+	width: 800px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	}
+
+#board {
+	width: 320px;
+	height: 240px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+.row {
+	width: 300px;
+	height: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+.square {
+	float: left;
+	width: 98px;
+	height: 68px;
+	background-color: wheat;
+	}
+
+.sideborder {
+	margin-left: 2px;
+	margin-right: 2px;
+	}
