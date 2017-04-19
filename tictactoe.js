@@ -1,8 +1,8 @@
 (function() {
 	const ds = [9,9,9,9,9,9,9,9,9,9];
-	const imageUrls = ["url(o.png)", "url(x.png)"];
-	const msg = ["O Wins!", "X Wins!"];
-	let turn = 1; // 1 = 'x', 0 = 'o'
+	const images = ["x.png", "o.png"]; // x, o
+	const msg = ["X Wins!","O Wins!"];
+	let turn = 0; // 1 = 'x', 0 = 'o'
 	let gameover = false;
 
 	(document.getElementById("sq1")).addEventListener("click", clicked, false);
@@ -14,6 +14,7 @@
 	(document.getElementById("sq7")).addEventListener("click", clicked, false);
 	(document.getElementById("sq8")).addEventListener("click", clicked, false);
 	(document.getElementById("sq9")).addEventListener("click", clicked, false);
+
 
 	document.addEventListener("keydown", pressed, false);
 
@@ -46,9 +47,11 @@
 		}
 		
 		if (ds[id] === 9) {
-			let player = (turn === 1) ? turn : 0;
-
-			box ? (box.style.background = imageUrls[player]) : (this.style.background = imageUrls[player]);
+			let player = turn;
+			
+			const image = new Image();
+			image.src = images[player];
+			box ? box.appendChild(image) : this.appendChild(image);
 
 			ds[id] = player;
 			isGameOver(player);
